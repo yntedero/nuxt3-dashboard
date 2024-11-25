@@ -3,25 +3,29 @@ const items = ref([
   {
     title: 'Overview',
     path: '/overview',
-    iconName: 'ic:round-dashboard'
+    iconName: 'ri:dashboard-line'
   },
   {
     title: 'Transactions',
-    path: '/transactions'
+    path: '/transactions',
+    iconName: 'tdesign:undertake-transaction'
   },
   {
     title: 'Account',
-    path: '/account'
+    path: '/account',
+    iconName: 'codicon:account'
   },
   {
     title: 'Contacts',
-    path: '/contacts'
+    path: '/contacts',
+    iconName: 'typcn:contacts'
   },
   {
     title: 'Settings',
-    path: '/settings'
-  },
-])
+    path: '/settings',
+    iconName: 'material-symbols:settings-outline'
+  }
+]);
 </script>
 
 <template>
@@ -32,10 +36,12 @@ const items = ref([
     </header>
     <div class="px-4 grow">
       <div class="grid gap-2">
-        <div v-for="(item, index) in items" :key="index"
-             class="flex items-center gap-2 px-2 py-1 transition rounded
-             cursor-pointer hover:bg-neutral-100">
-          <Icon :name="item.iconName" />
+        <div
+            v-for="(item, index) in items"
+            :key="index"
+            class="flex items-center gap-2 px-2 py-1 transition rounded cursor-pointer hover:bg-neutral-100"
+        >
+          <Icon v-if="item.iconName" :name="item.iconName" />
           <span>{{ item.title }}</span>
         </div>
       </div>
