@@ -2,7 +2,7 @@
 const items = ref([
   {
     title: 'Overview',
-    path: '/overview',
+    path: '/',
     iconName: 'ri:dashboard-line'
   },
   {
@@ -32,18 +32,19 @@ const items = ref([
   <div>
     <header class="flex items-center gap-2 p-4">
       <Logo />
-      <p class="font-bold">Dashboard</p>
+      <p class="font-bold text-black">Dashboard</p>
     </header>
     <div class="px-4 grow">
       <div class="grid gap-2">
-        <div
+        <NuxtLink
             v-for="(item, index) in items"
             :key="index"
+            :href="item.path"
             class="flex items-center gap-2 px-2 py-1 transition rounded cursor-pointer hover:bg-neutral-100"
         >
           <Icon v-if="item.iconName" :name="item.iconName" />
           <span>{{ item.title }}</span>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </div>
