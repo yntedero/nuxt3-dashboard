@@ -14,19 +14,33 @@
     "@nuxt/image": "^1.8.1",
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/tailwindcss": "^6.12.2",
-    "class-variance-authority": "^0.7.0",
+    "@tanstack/react-table": "^8.20.5",
+    "@tanstack/vue-table": "^8.20.5",
+    "@unovis/ts": "^1.4.4",
+    "@unovis/vue": "^1.4.4",
+    "@vueuse/core": "^12.0.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-vue-next": "^0.460.0",
+    "lucide-vue-next": "^0.462.0",
     "nuxt": "^3.14.1592",
     "radix-vue": "^1.9.10",
     "shadcn-nuxt": "^0.11.3",
-    "tailwind-merge": "^2.5.4",
+    "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
-    "vue": "latest",
-    "vue-router": "latest"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387",
   "devDependencies": {
+    "@iconify-json/codicon": "^1.2.3",
+    "@iconify-json/heroicons-outline": "^1.2.0",
+    "@iconify-json/iconamoon": "^1.2.1",
+    "@iconify-json/material-symbols": "^1.2.8",
+    "@iconify-json/ri": "^1.2.3",
+    "@iconify-json/solar": "^1.2.1",
+    "@iconify-json/tabler": "^1.2.8",
+    "@iconify-json/tdesign": "^1.2.5",
+    "@iconify-json/typcn": "^1.2.1",
     "typescript": "^5.7.2"
   }
 }
