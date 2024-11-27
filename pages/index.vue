@@ -1,16 +1,43 @@
 <script setup lang="ts">
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
 import {statisticsInitialData} from "~/mocks/statistics";
 
-const graphData = ref(statisticsInitialData.today)
-const currentTab = ref('Today')
+const graphData = ref(statisticsInitialData.today);
+const currentTab = ref('Today');
 
 const tabs = [
-  { title: 'Today' },
-  { title: 'Week' },
-  { title: 'Month' },
-  { title: 'Year' },
-]
+  {title: 'Today'},
+  {title: 'Week'},
+  {title: 'Month'},
+  {title: 'Year'},
+];
+
+const cards = [
+  {
+    title: "Sales",
+    progression: 12,
+    amount: 1234.44,
+    label: "View sales",
+    description: "Sales of November 2024",
+    icon: "solar:ticket-sale-outline"
+  },
+  {
+    title: "Refunds",
+    progression: 8,
+    amount: 61.10,
+    label: "View refunds",
+    description: "Refunds since beggining of this year",
+    icon: "heroicons-outline:receipt-refund"
+  },
+  {
+    title: "Payouts",
+    progression: 16,
+    amount: 785.14,
+    label: "View payouts",
+    description: "Payouts of this week",
+    icon: "tabler:zoom-money"
+  },
+];
 
 const setCategory = (e: Event) => {
   const target = e.target as HTMLElement
@@ -19,19 +46,19 @@ const setCategory = (e: Event) => {
     graphData.value = statisticsInitialData[category]
     currentTab.value = target.innerText
   }
-}
+};
 </script>
 
 <template>
-  <div class="grid gap-8 w-auto">
+  <div class="grid gap-4 w-full">
     <header class="flex items-start justify-between">
       <div class="grow">
         <p>Hi, welcome back User !</p>
         <h1>Dashboard</h1>
       </div>
-      <div class="w-[120px] h-[36px] bg-neutral-300"></div>
+      <ProductTheNewItem />
     </header>
-    <main class="grid gap-2">
+    <main class="grow">
       <Tabs default-value="Today" @click="setCategory">
         <TabsList>
           <TabsTrigger v-for="(item, index) in tabs" :key="index" :value="item.title">
@@ -53,8 +80,8 @@ const setCategory = (e: Event) => {
       <p>Current Tab: {{ currentTab }}</p>
     </main>
     <footer>
-      <div class="flex items-center ">
-        <div v-for="(item, index) in 3" :key="index" class="w-auto h-[260px] bg-neutral-300"></div>
+      <div class="grid lg:grid-cols-3 gap-4">
+        <Cards v-for="(item, index) in cards" :key="index" :card="item"/>
       </div>
     </footer>
   </div>

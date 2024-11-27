@@ -10,28 +10,13 @@ const items = ref([
     path: '/transactions',
     iconName: 'tdesign:undertake-transaction'
   },
-  {
-    title: 'Account',
-    path: '/account',
-    iconName: 'codicon:account'
-  },
-  {
-    title: 'Contacts',
-    path: '/contacts',
-    iconName: 'typcn:contacts'
-  },
-  {
-    title: 'Settings',
-    path: '/settings',
-    iconName: 'material-symbols:settings-outline'
-  }
 ]);
 </script>
 
 <template>
   <div>
     <header class="flex items-center gap-2 p-4">
-      <Logo />
+      <TheLogo />
       <p class="font-bold text-black">Dashboard</p>
     </header>
     <div class="px-4 grow">

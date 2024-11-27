@@ -6,7 +6,7 @@ const open = ref(true);
   <div>
     <!-- Mobile Header -->
     <div class="z-50 flex items-center justify-between w-full h-full p-4 lg:hidden">
-      <Logo />
+      <TheLogo/>
       <Icon
           class="z-50 cursor-pointer left-2 top-2"
           size="30"
@@ -23,13 +23,17 @@ const open = ref(true);
             name="material-symbols:close"
             @click="open = false"
         />
-        <SidebarMenu />
+        <SidebarTheMenu/>
       </div>
     </div>
 
     <!-- Desktop Sidebar -->
     <div class="hidden lg:flex w-[200px] h-screen flex flex-col justify-between border-r">
-      <SidebarMenu />
+      <SidebarTheMenu/>
+      <!-- UserCard  -->
+      <div>
+        <UserItem/>
+      </div>
     </div>
   </div>
 </template>
