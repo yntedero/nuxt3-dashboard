@@ -1,6 +1,6 @@
 <script setup lang="ts">
-const name = ref("Example User")
-const description = ref("Example Description")
+const name = ref('Example User')
+const description = ref('Example Description')
 </script>
 
 <template>

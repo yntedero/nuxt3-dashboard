@@ -1,29 +1,26 @@
 <script setup lang="ts">
 import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
+	AlertDialog,
+	AlertDialogAction,
+	AlertDialogCancel,
+	AlertDialogContent,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
 } from '@/components/ui/alert-dialog'
-import {Input} from "~/components/ui/input";
-const { loading, open } = useHelpers();
+import { Input } from '~/components/ui/input'
+const { loading, open } = useHelpers()
 
 const createNewProducts = async () => {
-  try {
-    loading.value = true;
-  } catch (error) {
-
-  } finally {
-    loading.value = false;
-    open.value = false;
-  }
-
+	try {
+		loading.value = true
+	} catch (error) {
+	} finally {
+		loading.value = false
+		open.value = false
+	}
 }
-
 </script>
 
 <template>

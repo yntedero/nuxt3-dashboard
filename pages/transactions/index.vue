@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import DataTable from '@/components/DataTable.vue';
-import {columns} from "~/pages/transactions/columns";
+import DataTable from '@/components/DataTable.vue'
+import { columns } from '~/pages/transactions/columns'
 
-const data = ref<any>([]);
+const data = ref<any>([])
 
 function generateRandomData(numObjects: any) {
-  const statuses = ['pending', 'processing', 'completed'];
-  const emails = [
-    'example@gmail.com',
-    'me@example.com',
-    'test@example.com',
-    'user@example.com'
-  ];
+	const statuses = ['pending', 'processing', 'completed']
+	const emails = [
+		'example@gmail.com',
+		'me@example.com',
+		'test@example.com',
+		'user@example.com',
+	]
 
-  const randomData = [];
+	const randomData = []
 
-  for (let i = 0; i < numObjects; i++) {
-    const id = Math.random().toString(36).substr(2, 8);
-    const amount = Math.floor(Math.random() * 500) + 50; // Random amount between 50 and 550
-    const status = statuses[Math.floor(Math.random() * statuses.length)];
-    const email = emails[Math.floor(Math.random() * emails.length)];
+	for (let i = 0; i < numObjects; i++) {
+		const id = Math.random().toString(36).substr(2, 8)
+		const amount = Math.floor(Math.random() * 500) + 50 // Random amount between 50 and 550
+		const status = statuses[Math.floor(Math.random() * statuses.length)]
+		const email = emails[Math.floor(Math.random() * emails.length)]
 
-    randomData.push({ id, amount, status, email });
-  }
+		randomData.push({ id, amount, status, email })
+	}
 
-  return data.value = randomData;
+	return (data.value = randomData)
 }
 
 onMounted(() => {
-  generateRandomData(10);
+	generateRandomData(10)
 })
 </script>
 

@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const items = ref([
-  {
-    title: 'Overview',
-    path: '/',
-    iconName: 'ri:dashboard-line'
-  },
-  {
-    title: 'Transactions',
-    path: '/transactions',
-    iconName: 'tdesign:undertake-transaction'
-  },
-]);
+	{
+		title: 'Overview',
+		path: '/',
+		iconName: 'ri:dashboard-line',
+	},
+	{
+		title: 'Transactions',
+		path: '/transactions',
+		iconName: 'tdesign:undertake-transaction',
+	},
+])
 </script>
 
 <template>

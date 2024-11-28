@@ -1,52 +1,53 @@
 <script setup lang="ts">
-import {Tabs, TabsContent, TabsList, TabsTrigger} from '@/components/ui/tabs'
-import {statisticsInitialData} from "~/mocks/statistics";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { statisticsInitialData } from '~/mocks/statistics'
 
-const graphData = ref(statisticsInitialData.today);
-const currentTab = ref('Today');
+const graphData = ref(statisticsInitialData.today)
+const currentTab = ref('Today')
 
 const tabs = [
-  {title: 'Today'},
-  {title: 'Week'},
-  {title: 'Month'},
-  {title: 'Year'},
-];
+	{ title: 'Today' },
+	{ title: 'Week' },
+	{ title: 'Month' },
+	{ title: 'Year' },
+]
 
 const cards = [
-  {
-    title: "Sales",
-    progression: 12,
-    amount: 1234.44,
-    label: "View sales",
-    description: "Sales of November 2024",
-    icon: "solar:ticket-sale-outline"
-  },
-  {
-    title: "Refunds",
-    progression: 8,
-    amount: 61.10,
-    label: "View refunds",
-    description: "Refunds since beggining of this year",
-    icon: "heroicons-outline:receipt-refund"
-  },
-  {
-    title: "Payouts",
-    progression: 16,
-    amount: 785.14,
-    label: "View payouts",
-    description: "Payouts of this week",
-    icon: "tabler:zoom-money"
-  },
-];
+	{
+		title: 'Sales',
+		progression: 12,
+		amount: 1234.44,
+		label: 'View sales',
+		description: 'Sales of November 2024',
+		icon: 'solar:ticket-sale-outline',
+	},
+	{
+		title: 'Refunds',
+		progression: 8,
+		amount: 61.1,
+		label: 'View refunds',
+		description: 'Refunds since beggining of this year',
+		icon: 'heroicons-outline:receipt-refund',
+	},
+	{
+		title: 'Payouts',
+		progression: 16,
+		amount: 785.14,
+		label: 'View payouts',
+		description: 'Payouts of this week',
+		icon: 'tabler:zoom-money',
+	},
+]
 
 const setCategory = (e: Event) => {
-  const target = e.target as HTMLElement
-  const category = target.innerText.toLowerCase() as keyof typeof statisticsInitialData
-  if (statisticsInitialData[category]) {
-    graphData.value = statisticsInitialData[category]
-    currentTab.value = target.innerText
-  }
-};
+	const target = e.target as HTMLElement
+	const category =
+		target.innerText.toLowerCase() as keyof typeof statisticsInitialData
+	if (statisticsInitialData[category]) {
+		graphData.value = statisticsInitialData[category]
+		currentTab.value = target.innerText
+	}
+}
 </script>
 
 <template>

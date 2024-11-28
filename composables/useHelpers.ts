@@ -1,8 +1,8 @@
 export default function useHelpers() {
-    let loading = ref(false);
-    let open = ref(false)
-    return {
-        loading,
-        open,
-    }
+	const loading = ref(false)
+	const open = ref(false)
+	return {
+		loading,
+		open,
+	}
 }

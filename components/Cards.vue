@@ -1,10 +1,9 @@
 <script setup lang="ts">
-
 const props = defineProps({
-  card: {
-    type: Object,
-    required: true
-  }
+	card: {
+		type: Object,
+		required: true,
+	},
 })
 
 const card = props.card

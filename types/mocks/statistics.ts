@@ -1,5 +1,5 @@
 export interface MockTransactionModel {
-    name: string;
-    online: number;
-    transactions: number;
+	name: string
+	online: number
+	transactions: number
 }

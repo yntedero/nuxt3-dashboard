@@ -2,39 +2,44 @@
 import type { ColumnDef, SortingState } from '@tanstack/vue-table'
 
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
+	Table,
+	TableBody,
+	TableCell,
+	TableHead,
+	TableHeader,
+	TableRow,
 } from '@/components/ui/table'
 
 import {
-  FlexRender,
-  getCoreRowModel,
-  useVueTable,
-  getSortedRowModel,
+	FlexRender,
+	getCoreRowModel,
+	getSortedRowModel,
+	useVueTable,
 } from '@tanstack/vue-table'
-import { valueUpdater } from "~/lib/utils";
-
+import { valueUpdater } from '~/lib/utils'
 
 const props = defineProps<{
-  columns: ColumnDef<TData, TValue>[]
-  data: TData[]
+	columns: ColumnDef<TData, TValue>[]
+	data: TData[]
 }>()
 
 const sorting = ref<SortingState>([])
 
 const table = useVueTable({
-  get data() { return props.data },
-  get columns() { return props.columns },
-  getCoreRowModel: getCoreRowModel(),
-  getSortedRowModel: getSortedRowModel(),
-  onSortingChange: updaterOrValue => valueUpdater(updaterOrValue, sorting),
-  state: {
-    get sorting() { return sorting.value },
-  },
+	get data() {
+		return props.data
+	},
+	get columns() {
+		return props.columns
+	},
+	getCoreRowModel: getCoreRowModel(),
+	getSortedRowModel: getSortedRowModel(),
+	onSortingChange: (updaterOrValue) => valueUpdater(updaterOrValue, sorting),
+	state: {
+		get sorting() {
+			return sorting.value
+		},
+	},
 })
 </script>
 
